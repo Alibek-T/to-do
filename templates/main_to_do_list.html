@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container" style="border: 1px solid rgb(244, 78, 32)">
+    <div class="d-flex flex-column p-5">
+        <div class="d-flex flex-row justify-content-left">
+            <div class="card" style="width: 18rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                <h5 class="card-title">Weather Info for Today</h5>
+                <p class="card-text">
+                    <p>City: {{ City }}</p>
+                    <p>Date: { Date }</p>
+                    <p>Temperature: { Temperature }</p>
+                    <p>Wind: { Wind }</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row justify-content-center">
+            <p class="text-left h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">To_Do List</p>
+        </div>
+
+        <div class="d-flex flex-row justify-content-right">
+            <div class="card" style="width: 18rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                <!-- <h5 class="card-title">Weather Info for Today</h5> -->
+                <p class="card-text">
+                    <p>Hello, User</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+
+        <div class="d-flex flex-row justify-content-right">
+            <div class="mb-1">
+                <input type="submit" class="btn btn-secondary" value="LogOut"
+
+            </div>
+        </div>
+
+        
+
+
+
+
+    </div>
+
+        
+</div>
+
+{% endblock body %}
+
+
+<!-- 1st line: Api + Hello, User button - LogOut - 3 objects
+    2nd line: To Do List - nadpis' - 1 object
+    3rd line: Line for writing task + Add Task button - 2 objects
+    4th line: just line - 1 object
+    5th line: Task itself + Undone-Done status (green-yellow) + delete button -->

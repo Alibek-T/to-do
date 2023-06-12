@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+<body>
+{% block body %}
+<style>body{background-color: #4071F4}</style>
+<div>
+    <h1>To Do List</h1>
+    <form action='/add' method="post">
+        <div>
+            <label>Enter the task</label>
+            <input type="text" name="name">
+            <button type="submit">Add Task</button>
+        </div>
+    </form><br><br>
+    <table>
+        <tbody>
+        {%for Todo in todo_list%}
+        <tr>
+            <td>{{Todo.task_id}}</td>
+            <td>{{Todo.name}}</td>
+            {%if Todo.done==False%}
+            <td>Not done</td>
+            {%else%}
+            <td>Done</td>
+            {%endif%}
+            <td><a href="/update/{{todo.task_id}}">Update</a></td>
+            <td><a href="/delete/{{todo.task_id}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
+
+</body>
+</html>
+
+<div class="container">
+    <div class="container" style="border: 1px solid black">
+        <form action="/tasks" method="get" style="border: 1px solid black">
+            <div class="d-flex mb-3" >
+                <div class="me-auto p-2">Flex item</div>
+                <p class="text-center">Выровненный по центру текст на всех размерах области просмотра.</p>
+                <div class="p-2">Hello, {}</div>
+                <a href="#" class="btn btn-light">Logout</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" style="border: 1px solid black">
+
+    </div>
+</div>
+
+<div class="d-flex flex-column p-5">
+        <div class="d-flex">
+            <div class="p-2 flex-grow-1">Flex item</div>
+            <div class="p-2">Flex item</div>
+            <div class="p-2">Third flex item</div>
+        </div>
+        <a href="#" class="btn btn-primary">Logout</a>
+    </div>

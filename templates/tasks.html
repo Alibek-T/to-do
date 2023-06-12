@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+    body{
+        background-color:#4d9459
+    }
+</style>
+<div>
+    <form action='/logout' method="get">
+        <div class="d-flex mb-3">
+            <div class="me-auto p-2"></div>
+            <h3>Hello, {{session['username']}}</h3>
+            <button type="submit">LogOut</button>
+        </div>
+    </form>
+    <h1>To Do List</h1>
+    <form action='/add' method="post">
+        <div>
+            <input type="text" name="name">
+            <button type="submit">Add Task</button>
+        </div>
+    </form><br><br>
+    <table>
+        <tbody>
+        {%for Task in task_list%}
+        <tr>
+            <td>{{Task.task_id}}</td>
+            <td>{{Task.title}}</td>
+            {%if Task.status==False%}
+            <td>Not done</td>
+            {%else%}
+            <td>Done</td>
+            {%endif%}
+            <td><a href="/update/{{Task.task_id}}">Done</a></td>
+            <td><a href="/delete/{{Task.task_id}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+    body{
+        background-color:#4d9459
+    }
+</style>
+<!-- <p class="text-left h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p> -->
+<div class="container">
+    <div class="d-flex flex-column p-5">
+        <div class="d-flex flex-row justify-content-center">
+            <form action="/register" method="post" style="background-color: white" class="p-5 rounded my-3">
+                <div class="d-flex flex-row justify-content-center p-1">
+                    <img src="../static/img/logo2.jpeg" alt="" width="100px" height="62px">
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <p class="text-left h1 fw-bold mb-4 mx-1 mx-md-3 mt-3">Login</p>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">only for internal use</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <div class="mb-3" >
+                    <input type="submit" class="btn btn-secondary" value="login">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
